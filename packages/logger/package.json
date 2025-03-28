@@ -1,0 +1,22 @@
+{
+  "name": "@nodejs-modular-system/logger",
+  "version": "1.0.0",
+  "description": "Logger module for the modular system",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [
+    "logger",
+    "module"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
+  }
+}

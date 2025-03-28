@@ -1,0 +1,36 @@
+{
+  "name": "nodejs-modular-system",
+  "version": "1.0.0",
+  "description": "A modular system for Node.js applications",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:packages",
+    "build:packages": "npm run build --workspaces",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "create-module": "node core/cli/create-module.js"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "nodejs",
+    "modular",
+    "plugin",
+    "system"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "optionalDependencies": {
+    "fastify": "^4.17.0",
+    "@fastify/express": "^2.3.0"
+  }
+}

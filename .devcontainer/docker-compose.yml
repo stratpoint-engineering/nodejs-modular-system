@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    env_file:
+      - ../.env
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+      - PORT=${PORT:-3000}
+      - FRAMEWORK=${FRAMEWORK:-express}
+      - DEBUG=${DEBUG:-true}
+      - MONGODB_URI=mongodb://root:example@mongodb:27017/modular-system?authSource=admin
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    networks:
+      - modular-system-network
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - modular-system-network
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+
+networks:
+  modular-system-network:
+    driver: bridge
+
+volumes:
+  mongodb-data:

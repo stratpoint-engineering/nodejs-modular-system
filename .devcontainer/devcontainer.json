@@ -1,0 +1,40 @@
+{
+  "name": "Node.js Modular System",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "typescript.tsdk": "node_modules/typescript/lib"
+      },
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.js-debug",
+        "christian-kohler.path-intellisense",
+        "eamodio.gitlens",
+        "ms-vscode-remote.remote-containers",
+        "streetsidesoftware.code-spell-checker",
+        "mikestead.dotenv",
+        "yzhang.markdown-all-in-one",
+        "gruntfuggly.todo-tree",
+        "visualstudioexptteam.vscodeintellicode",
+        "redhat.vscode-yaml",
+        "orta.vscode-jest",
+        "firsttris.vscode-jest-runner",
+        "wix.vscode-import-cost"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install && npm run build",
+  "remoteUser": "node"
+}
