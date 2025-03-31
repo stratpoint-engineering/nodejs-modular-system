@@ -1,36 +1,39 @@
 {
-  "name": "nodejs-modular-system",
+  "name": "@stratpoint/nodejs-modular-core",
   "version": "1.0.0",
-  "description": "A modular system for Node.js applications",
-  "main": "app.js",
+  "description": "A lightweight core system for building modular Node.js applications",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
   "type": "module",
-  "scripts": {
-    "build": "npm run build:packages",
-    "build:packages": "npm run build --workspaces",
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "jest",
-    "create-module": "node core/cli/create-module.js"
-  },
-  "workspaces": [
-    "packages/*"
+  "files": [
+    "src",
+    "types"
   ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "keywords": [
     "nodejs",
     "modular",
-    "plugin",
+    "architecture",
+    "framework",
     "system"
   ],
-  "author": "",
+  "author": "Stratpoint Engineering",
   "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stratpoint-engineering/nodejs-modular-system.git"
   },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+  "bugs": {
+    "url": "https://github.com/stratpoint-engineering/nodejs-modular-system/issues"
+  },
+  "homepage": "https://github.com/stratpoint-engineering/nodejs-modular-system#readme",
+  "peerDependencies": {
+    "express": "^4.18.0"
   },
   "optionalDependencies": {
-    "fastify": "^4.17.0",
+    "fastify": "^4.15.0",
     "@fastify/express": "^2.3.0"
   }
 }
